@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="SpringHibernate:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/SpringHibernate_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="SpringHibernate/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="SpringHibernate" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="application" name="Spring-4.2.5.RELEASE" />
+          <element id="library" level="application" name="Hibernate 4.2.2-4.2.2" />
+          <element id="library" level="application" name="SpringMVC" />
+          <element id="file-copy" path="E:/J2EElib/SpringMVC/jstl.jar" />
+          <element id="file-copy" path="E:/J2EElib/SpringMVC/standard.jar" />
+          <element id="file-copy" path="$APPLICATION_CONFIG_DIR$/jdbc-drivers/sqlite-jdbc-3.8.9.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
