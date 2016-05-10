@@ -18,8 +18,8 @@ public class MainController {
     @Resource
     UserService userService;
 
-    @RequestMapping(value = "/login",params = {"inputEmail","inputPassword"},method = {RequestMethod.POST})
-    public String Login(@RequestParam("inputEmail") String id,@RequestParam("inputPassword") String password){
+    @RequestMapping(value = "/login",method = {RequestMethod.POST})
+    public String Login(@RequestParam("inputEmail") String id,@RequestParam("inputPassword") String password,@RequestParam("checkbox") String checkbox){
         if(userService.LoginResult(id,password)){
             return "main";
         }else{
