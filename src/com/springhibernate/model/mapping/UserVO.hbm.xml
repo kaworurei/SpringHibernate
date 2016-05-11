@@ -6,7 +6,8 @@
 
     <class name="com.springhibernate.model.models.UserVO" table="User" schema="">
         <id name="id" column="id"/>
-        <property name="userId" column="UserID"/>
+        <property name="userName" column="UserName"/>
         <property name="userPassWord" column="UserPassWord"/>
+        <property name="status" column="Status"/>
     </class>
 </hibernate-mapping>

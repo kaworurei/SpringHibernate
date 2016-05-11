@@ -11,6 +11,8 @@ public class UserVO {
     private int id;
     private String userId;
     private String userPassWord;
+    private String userName;
+    private Integer status;
 
     @Id
     @Column(name = "id")
@@ -63,5 +65,25 @@ public class UserVO {
         result = 31 * result + (userId != null ? userId.hashCode() : 0);
         result = 31 * result + (userPassWord != null ? userPassWord.hashCode() : 0);
         return result;
+    }
+
+    @Basic
+    @Column(name = "UserName")
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    @Basic
+    @Column(name = "Status")
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

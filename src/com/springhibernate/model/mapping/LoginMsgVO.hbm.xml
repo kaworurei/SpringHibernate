@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.springhibernate.model.models.LoginMsgVO" table="LoginMsg" schema="">
+        <id name="id" column="id"/>
+        <property name="userId" column="UserId"/>
+        <property name="loginIp" column="LoginIP"/>
+        <property name="uuId" column="UUId"/>
+        <property name="loginDataTime" column="LoginDataTime"/>
+    </class>
+</hibernate-mapping>

@@ -7,9 +7,10 @@
         <property name="connection.url">jdbc:sqlite:C:/Users/Administrator/IdeaProjects/J2EEDemo/db.sqlite</property>
         <property name="connection.driver_class">org.sqlite.JDBC</property>
         <property name="dialect">com.springhibernate.util.SQLiteDialect</property>
-        <mapping class="com.springhibernate.model.models.PersonVO"/>
-        <mapping class="com.springhibernate.model.models.ShopVO"/>
-        <mapping class="com.springhibernate.model.models.UserVO"/>
+        <mapping resource="com/springhibernate/model/mapping/LoginMsgVO.hbm.xml"/>
+        <mapping resource="com/springhibernate/model/mapping/PersonVO.hbm.xml"/>
+        <mapping resource="com/springhibernate/model/mapping/ShopVO.hbm.xml"/>
+        <mapping resource="com/springhibernate/model/mapping/UserVO.hbm.xml"/>
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>

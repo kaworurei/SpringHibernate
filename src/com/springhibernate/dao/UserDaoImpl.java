@@ -22,7 +22,7 @@ public class UserDaoImpl implements UserDao {
     public UserVO findByUserId(String id) {
         Session session=sessionFactory.openSession();
         try {
-            Query query=session.createQuery(" from UserVO where userId = ?");
+            Query query=session.createQuery(" from UserVO where userName = ?");
             query.setParameter(0,id);
             List<UserVO> result= (List<UserVO>) query.list();
             if(result.size()==1)
