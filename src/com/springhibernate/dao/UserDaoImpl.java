@@ -1,6 +1,7 @@
 package com.springhibernate.dao;
 
 import com.springhibernate.model.models.UserVO;
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -31,7 +32,11 @@ public class UserDaoImpl implements UserDao {
                 return null;
             }
         }finally {
-            session.close();
+            try {
+                session.close();
+            } catch (HibernateException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

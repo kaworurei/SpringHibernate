@@ -26,9 +26,14 @@ public class AuthorizedInterceptor implements HandlerInterceptor {
  //       }
 
         Cookie[] cookies = request.getCookies();
-
-
-        return false;
+        for(Cookie cookie:cookies){
+            if(cookie.getName().equals("userid")){
+                request.getSession().setAttribute("userid",cookie.getName());
+                response.sendRedirect("main/login");
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
