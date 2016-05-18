@@ -16,8 +16,33 @@
     <!-- Custom styles for this template -->
     <link href="//v3.bootcss.com/examples/signin/signin.css" rel="stylesheet">
     <script src="../js/jquery-1.9.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+
+
 </head>
 <body>
-    <button type="button" class="btn btn-lg btn-primary">Primary</button>
+    <ul class="nav nav-tabs">
+        <li role="presentation"><a href="javascript:void(0)">Home</a></li>
+        <li role="presentation" class="active"><a href="javascript:void(0)">Profile</a></li>
+        <li role="presentation"><a href="javascript:void(0)">Messages</a></li>
+    </ul>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">Go!</button>
+                  </span>
+            </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+    <input type="text" id="liselect">
+    <script>
+        $('.nav.nav-tabs li a').click(function(){
+            $('.nav.nav-tabs li').removeClass("active");
+            $(this).parent().addClass("active");
+            $("#liselect").val($(this).text());
+        });
+    </script>
 </body>
 </html>

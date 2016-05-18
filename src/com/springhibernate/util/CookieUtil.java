@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CookieTool {
+public class CookieUtil {
 
   /**
    * 设置cookie（接口方法）

@@ -1,7 +1,8 @@
 package com.springhibernate.controller;
 
 import com.springhibernate.service.UserService;
-import com.springhibernate.util.CookieTool;
+import com.springhibernate.util.CookieUtil;
+import com.springhibernate.util.SessionUtil;
 import com.springhibernate.util.ValueCheckUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +27,7 @@ public class MainController {
     public String Login(HttpServletResponse response, @RequestParam("inputEmail") String id, @RequestParam("inputPassword") String password, @RequestParam("checkbox") String checkbox) {
         if (userService.LoginResult(id, password)) {
             if (checkbox.split(",")[0].equals("true")) {
-                CookieTool.addCookie(response, "userid", id, 30 * 24 * 60 * 60);
+                CookieUtil.addCookie(response, "userid", id, 30 * 24 * 60 * 60);
             }
             return "main";
         } else {
@@ -36,7 +37,7 @@ public class MainController {
 
     @RequestMapping(value = "/login",method = {RequestMethod.GET})
     public String Login(HttpServletRequest request){
-        if(ValueCheckUtil.isEmptyString(request.getSession().getAttribute("userid"))){
+        if(SessionUtil.isSessionExist(request,"userid")){
             return "main";
         }else{
             return "false";

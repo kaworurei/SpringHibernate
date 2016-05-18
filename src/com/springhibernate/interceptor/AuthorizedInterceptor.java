@@ -1,5 +1,7 @@
 package com.springhibernate.interceptor;
 
+import com.springhibernate.util.SessionUtil;
+import com.springhibernate.util.ValueCheckUtil;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -24,13 +26,23 @@ public class AuthorizedInterceptor implements HandlerInterceptor {
 //        }
 //        if(beFilter){
  //       }
-
-        Cookie[] cookies = request.getCookies();
-        for(Cookie cookie:cookies){
-            if(cookie.getName().equals("userid")){
-                request.getSession().setAttribute("userid",cookie.getName());
+        if(SessionUtil.isSessionExist(request,"userid")){
+            if(request.getRequestURI().contains("index")){
+                //request.getRequestDispatcher("login").forward(request,response);
                 response.sendRedirect("main/login");
                 return false;
+            }
+            return true;
+        }
+
+        Cookie[] cookies = request.getCookies();
+        if(cookies!=null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("userid")) {
+                    request.getSession().setAttribute("userid", cookie.getName());
+                    response.sendRedirect("main/login");
+                    return false;
+                }
             }
         }
         return true;

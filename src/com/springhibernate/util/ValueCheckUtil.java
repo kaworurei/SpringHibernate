@@ -5,8 +5,6 @@ package com.springhibernate.util;
  */
 public class ValueCheckUtil {
     public static boolean isEmptyString(Object object) {
-        String str = String.valueOf(object);
-        return str == null || str.equals("");
+        return object == null || String.valueOf(object).equals("");
     }
-
 }
