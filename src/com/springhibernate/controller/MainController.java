@@ -38,7 +38,7 @@ public class MainController {
     @RequestMapping(value = "/login",method = {RequestMethod.GET})
     public String Login(HttpServletRequest request){
         if(SessionUtil.isSessionExist(request,"userid")){
-            return "css";
+            return "main";
         }else{
             return "false";
         }

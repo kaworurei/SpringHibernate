@@ -1,0 +1,90 @@
+.body {
+    margin-top: -40px;
+    margin-bottom: -40px;
+    background-color: #c7ddef;
+}
+.main-head {
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    text-align: center;
+}
+.main-head h1 {
+    color: #fff;
+}
+
+.main-nav{
+    text-align: center;
+    background: #ffffff;
+    border-top: 1px solid #ebebeb;
+    margin-bottom: 35px;
+    border-bottom: 2px solid #e1e1e1;
+}
+
+.main-nav ul li {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+}
+
+.main-nav ul li a{
+    color: #505050;
+}
+.main-nav ul li:hover > a{
+    color: #f4645f;
+    text-decoration: none;
+}
+
+@media (max-width: 767px) {
+    .main-nav{
+        text-align: left;
+    }
+
+    .main-nav ul li {
+        display: block;
+    }
+}
+
+.navbar-header{
+    text-align: center;
+}
+
+.navbar-header i {
+    height: 50px;
+    line-height: 56px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .nav-toggle-button {
+        display: none;
+    }
+}
+
+.btn {
+    padding: 7px 14px;
+    border-radius: 2px;
+}
+.btn-doc{
+    color: #fff;
+    position: relative;
+    border: 1px solid #f1362f;
+    background-color: transparent;
+}
+.btn-doc:hover{
+    color: #fff;
+    border: 1px solid #303030;
+    background: #303030;
+}
+
+@media only screen and (max-width: 767px) {
+    .btn-doc {
+        display: block;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+    }
+}

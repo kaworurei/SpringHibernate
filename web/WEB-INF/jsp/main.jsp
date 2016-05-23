@@ -13,55 +13,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>首页</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="../css/CSS.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="//v3.bootcss.com/examples/signin/signin.css" rel="stylesheet">
     <script src="../js/jquery-1.9.1.min.js"></script>
     <script src="../js/bootstrap.js"></script>
 
 
 </head>
-<body>
-
-
-
-
-    <ul class="nav nav-tabs">
-        <li role="presentation"><a href="javascript:void(0)">Home</a></li>
-        <li role="presentation" class="active"><a href="javascript:void(0)">Profile</a></li>
-        <li role="presentation"><a href="javascript:void(0)">Messages</a></li>
-    </ul>
-    <div class="row" style="margin-top: 20px">
-        <div class="col-lg-6">
-            <div class="input-group">
-                <div class="input-group-btn">
-                    <button type="button" class="btn btn-default dropdown-toggle" id="libutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="javascript:void(0)">Action</a></li>
-                        <li><a href="javascript:void(0)">Another action</a></li>
-                        <li><a href="javascript:void(0)">Something else here</a></li>
-                    </ul>
+    <body>
+    <div class="body">
+        <header class="main-head" style="background-image: url(http://image.golaravel.com/5/c9/44e1c4e50d55159c65da6a41bc07e.jpg)" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 ">
+                      <h1>这是一个标题</h1>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <a class="btn btn-default btn-doc">按钮---按钮1</a>
+                        <a class="btn btn-default btn-doc">按钮---按钮1</a>
+                        <a class="btn btn-default btn-doc">按钮---按钮1</a>
+                        <a class="btn btn-default btn-doc">按钮---按钮1</a>
+                        <a class="btn btn-default btn-doc">按钮---按钮1</a>
+                    </div>
                 </div>
-                <input type="text" class="form-control" placeholder="Search for...">
-                  <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit">Go!</button>
-                  </span>
-            </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
-    </div><!-- /.row -->
-    <input type="text" id="liselect" style="margin-top: 20px">
-    <script>
-        $('.nav.nav-tabs li a').click(function(){
-            $('.nav.nav-tabs li').removeClass("active");
-            $(this).parent().addClass("active");
-            $("#liselect").val($(this).text());
-        });
+            </div>
+        </header>
+        <nav class="main-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="navbar-header">
+                            <span class="nav-toggle-button collapsed" aria-expanded="false"  data-toggle="collapse" data-target="#main-menu" >
+                                <span class="sr-only">Toggle navigation</span>
+                                <i class="fa fa-bars"></i>
+                            </span>
+                        </div>
+                        <div id="main-menu" class="navbar-collapse collapse" aria-expanded="false">
+                            <ul class="nav">
+                                <li role="presentation"><a href="http://wenda.golaravel.com">导航1</a></li>
+                                <li role="presentation"><a href="http://wenda.golaravel.com">导航1</a></li>
+                                <li role="presentation"><a href="http://wenda.golaravel.com">导航1</a></li>
+                                <li role="presentation"><a href="http://wenda.golaravel.com">导航1</a></li>
+                                <li role="presentation"><a href="http://wenda.golaravel.com">导航1</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
 
-        $('.dropdown-menu li a').click(function(){
-//            $('.dropdown-menu li').removeClass("disabled");
-//            $(this).parent().addClass("disabled");
-            $("#libutton").html($(this).text()+"<span class=\"caret\"></span>");
-            $("#liselect").val($(this).text());
-        });
-    </script>
-</body>
+    </body>
 </html>
