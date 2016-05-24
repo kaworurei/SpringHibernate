@@ -12,10 +12,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <%--<link href="<%=request.getLocalAddr()%>:<%=request.getLocalPort()%><%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet">--%>
+    <link href="http://<%=request.getLocalAddr()%>:<%=request.getLocalPort()%><%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="//v3.bootcss.com/examples/signin/signin.css" rel="stylesheet">
-    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="http://<%=request.getLocalAddr()%>:<%=request.getLocalPort()%><%=request.getContextPath()%>/js/jquery-1.9.1.min.js"></script>
   </head>
 
   <body>

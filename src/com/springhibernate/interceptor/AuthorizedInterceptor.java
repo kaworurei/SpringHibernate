@@ -28,8 +28,9 @@ public class AuthorizedInterceptor implements HandlerInterceptor {
  //       }
         if(SessionUtil.isSessionExist(request,"userid")){
             if(request.getRequestURI().contains("index")){
-                //request.getRequestDispatcher("login").forward(request,response);
-                response.sendRedirect("main/login");
+                request.getRequestDispatcher("login").forward(request,response);
+                //response.sendRedirect("main/login");
+                System.out.println("SessionExist");
                 return false;
             }
             return true;
@@ -40,12 +41,17 @@ public class AuthorizedInterceptor implements HandlerInterceptor {
             for (Cookie cookie : cookies) {
                 if (cookie.getName().equals("userid")) {
                     SessionUtil.addSession(request,"userid",cookie.getValue());
-                    response.sendRedirect("main/login");
-                    return false;
+                    System.out.println("CookieExist");
+                    return true;
                 }
             }
         }
-        return true;
+        if(request.getRequestURI().contains("login")||request.getRequestURI().contains("index")){
+            return true;
+        }else {
+            response.sendRedirect("main/index");
+            return false;
+        }
     }
 
     @Override

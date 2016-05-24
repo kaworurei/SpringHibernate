@@ -44,7 +44,10 @@
 
     <mvc:interceptors>
         <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
-        <bean class="com.springhibernate.interceptor.AuthorizedInterceptor"/>
+        <mvc:interceptor>
+            <mvc:mapping path="/main/*"/>
+            <bean class="com.springhibernate.interceptor.AuthorizedInterceptor"/>
+        </mvc:interceptor>
     </mvc:interceptors>
 
 
