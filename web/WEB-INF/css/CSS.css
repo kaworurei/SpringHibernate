@@ -182,6 +182,7 @@ a:hover,a:focus{
 .widget{
     padding: 20px 30px;
     background:#ffffff;
+    margin-bottom: 50px;
 }
 .widget .title {
     margin-top: 0;
