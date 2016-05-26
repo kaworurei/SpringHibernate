@@ -79,6 +79,7 @@
 
 .btn-doc{
     color: #fff;
+    bottom: -40px;
     position: relative;
     border: 1px solid #f1362f;
     background-color: transparent;
@@ -210,4 +211,36 @@ a:hover,a:focus{
     -webkit-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
+}
+
+.widget .tag-cloud a:hover,
+.widget .tag-cloud a:focus{
+    color: #ffffff;
+    background-color: #f4645f;
+    border: 1px solid #f4645f;
+    text-decoration: none;
+}
+.pagenav .navbar-default {
+    background-color: #f8f8f8;
+    border-color:#f8f8f8;
+}
+
+.pagenav .navbar-toggle{
+    display: inline;
+    padding: 5px 5px;
+    margin-top: 14px;
+}
+
+.pagenav .col-md-2{
+    padding-left: 0px;
+    padding-right: 0px;
+    /*width: 20%;*/
+}
+.pagenav .navbar-toggle .icon-bar{
+    width: 15px;
+    height: 1px;
+}
+
+.pagenav .navbar-header {
+    float: none;
 }

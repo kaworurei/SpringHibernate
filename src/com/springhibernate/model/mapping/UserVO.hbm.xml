@@ -9,5 +9,12 @@
         <property name="userName" column="UserName"/>
         <property name="userPassWord" column="UserPassWord"/>
         <property name="status" column="Status"/>
+        <list name="articlelist" inverse="true">
+            <key>
+                <column name="Authorid"/>
+            </key>
+            <index column="id" type="java.lang.Integer"></index>
+            <one-to-many not-found="ignore" class="com.springhibernate.model.models.ArticleVO"/>
+        </list>
     </class>
 </hibernate-mapping>

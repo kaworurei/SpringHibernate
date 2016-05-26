@@ -11,6 +11,7 @@
         <mapping resource="com/springhibernate/model/mapping/PersonVO.hbm.xml"/>
         <mapping resource="com/springhibernate/model/mapping/ShopVO.hbm.xml"/>
         <mapping resource="com/springhibernate/model/mapping/UserVO.hbm.xml"/>
+        <mapping resource="com/springhibernate/model/mapping/ArticleVO.hbm.xml"/>
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>

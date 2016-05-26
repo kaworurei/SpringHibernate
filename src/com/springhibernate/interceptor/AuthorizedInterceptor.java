@@ -41,8 +41,14 @@ public class AuthorizedInterceptor implements HandlerInterceptor {
             for (Cookie cookie : cookies) {
                 if (cookie.getName().equals("userid")) {
                     SessionUtil.addSession(request,"userid",cookie.getValue());
-                    System.out.println("CookieExist");
-                    return true;
+                    if(request.getRequestURI().contains("index")){
+                        request.getRequestDispatcher("login").forward(request,response);
+                        System.out.println("SessionExist");
+                        return false;
+                    }else {
+                        System.out.println("CookieExist");
+                        return true;
+                    }
                 }
             }
         }

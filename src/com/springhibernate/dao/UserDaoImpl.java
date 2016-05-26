@@ -1,10 +1,7 @@
 package com.springhibernate.dao;
 
 import com.springhibernate.model.models.UserVO;
-import org.hibernate.HibernateException;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import org.hibernate.*;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
@@ -22,6 +19,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public UserVO findByUserId(String id) {
         Session session=sessionFactory.openSession();
+        Transaction ts=session.beginTransaction();
         try {
             Query query=session.createQuery(" from UserVO where userName = ?");
             query.setParameter(0,id);
