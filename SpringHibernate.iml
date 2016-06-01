@@ -81,5 +81,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="jQuery-2.0.0" level="application" />
+    <orderEntry type="library" name="com.google.code.gson:gson:2.6" level="application" />
   </component>
 </module>

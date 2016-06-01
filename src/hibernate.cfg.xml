@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:sqlite:C:/Users/Administrator/IdeaProjects/J2EEDemo/db.sqlite</property>
+        <property name="connection.url">jdbc:sqlite:C:/Users/Administrator/IdeaProjects/SpringHibernate/db.sqlite</property>
         <property name="connection.driver_class">org.sqlite.JDBC</property>
         <property name="dialect">com.springhibernate.util.SQLiteDialect</property>
         <mapping resource="com/springhibernate/model/mapping/LoginMsgVO.hbm.xml"/>

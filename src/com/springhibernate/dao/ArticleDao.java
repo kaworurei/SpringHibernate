@@ -9,5 +9,8 @@ import java.util.List;
  */
 public interface ArticleDao {
     ArticleVO findById(int id);
-    List<ArticleVO> findList(int currentPage, int pageSize);
+
+    List<ArticleVO> findList(int currentPage, int pageSize,String whereStr);
+
+    int SetArticleEnable(List list,boolean enable);
 }

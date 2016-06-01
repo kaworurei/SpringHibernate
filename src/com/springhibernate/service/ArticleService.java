@@ -9,5 +9,9 @@ public interface ArticleService {
 
     String getArticleDetailHtml(int id);
 
-    List getArticleListHtml(int currentPage, int pageSize);
+    List getArticleList(int currentPage, int pageSize,String whereStr);
+
+    String getArticleListHtml(int currentPage, int pageSize,String whereStr);
+
+    String SetArticleEnable(int currentPage, int pageSize, String whereStr, String idStr,boolean enable);
 }

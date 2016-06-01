@@ -6,6 +6,7 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="SpringHibernate" />
+          <element id="library" level="application" name="jQuery-2.0.0" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="application" name="Spring-4.2.5.RELEASE" />
@@ -14,6 +15,7 @@
           <element id="file-copy" path="E:/J2EElib/SpringMVC/jstl.jar" />
           <element id="file-copy" path="E:/J2EElib/SpringMVC/standard.jar" />
           <element id="file-copy" path="$APPLICATION_CONFIG_DIR$/jdbc-drivers/sqlite-jdbc-3.8.9.jar" />
+          <element id="library" level="application" name="com.google.code.gson:gson:2.6" />
         </element>
       </element>
     </root>

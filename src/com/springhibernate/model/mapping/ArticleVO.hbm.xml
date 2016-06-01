@@ -12,6 +12,7 @@
         <property name="content" column="Content"/>
         <property name="image" column="Image"/>
         <property name="tags" column="Tags"/>
+        <property name="status" column="Status" />
         <many-to-one name="author" class="com.springhibernate.model.models.UserVO">
             <column name="Authorid"/>
         </many-to-one>

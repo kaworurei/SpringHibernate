@@ -37,8 +37,8 @@ public class MainController {
             if (checkbox.split(",")[0].equals("true")) {
                 CookieUtil.addCookie(response, "userid", id, 30 * 24 * 60 * 60);
             }
-            List<ArticleVO> list=articleService.getArticleListHtml(1,10);
-            model.setViewName("nav");
+            List<ArticleVO> list=articleService.getArticleList(1,10,"");
+            model.setViewName("main");
             model.addObject("article",list);
         } else {
             model.setViewName("false");
@@ -50,8 +50,8 @@ public class MainController {
     public ModelAndView Login(HttpServletRequest request){
         ModelAndView model=new ModelAndView();
         if(SessionUtil.isSessionExist(request,"userid")){
-            List<ArticleVO> list=articleService.getArticleListHtml(1,10);
-            model.setViewName("nav");
+            List<ArticleVO> list=articleService.getArticleList(1,10,"");
+            model.setViewName("main");
             model.addObject("article",list);
         }else{
             model.setViewName("false");

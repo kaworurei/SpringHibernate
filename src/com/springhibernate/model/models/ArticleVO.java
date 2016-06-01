@@ -18,6 +18,18 @@ public class ArticleVO {
     private String image;
     private String tags;
     private UserVO author;
+
+    @Basic
+    @Column(name = "Status")
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    private int status;
     private List<String> taglist;
 
     @Id

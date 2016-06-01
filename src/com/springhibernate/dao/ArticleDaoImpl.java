@@ -2,10 +2,15 @@ package com.springhibernate.dao;
 
 import com.springhibernate.model.models.ArticleVO;
 import com.springhibernate.model.models.UserVO;
+import com.springhibernate.util.ValueCheckUtil;
 import org.hibernate.*;
+import org.springframework.orm.hibernate4.SessionFactoryUtils;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -38,15 +43,17 @@ public class ArticleDaoImpl implements ArticleDao {
     }
 
     @Override
-    public List<ArticleVO> findList(int currentPage, int pageSize) {
+    public List<ArticleVO> findList(int currentPage, int pageSize,String whereStr) {
         Session session=sessionFactory.openSession();
         Transaction ts=session.beginTransaction();
         List list=null;
         try {
-
-            UserVO user=(UserVO) session.get(UserVO.class,1);
-
-            String sql =" from ArticleVO order by updateTime desc ";
+            String sql ="";
+            if(ValueCheckUtil.isEmptyString(whereStr)) {
+                sql = " from ArticleVO order by updateTime desc ";
+            }else {
+                sql = " from ArticleVO where" + whereStr + " order by updateTime desc ";
+            }
             Query query=session.createQuery(sql);
             query.setFirstResult((currentPage-1)*pageSize);
             query.setMaxResults(pageSize);
@@ -67,5 +74,40 @@ public class ArticleDaoImpl implements ArticleDao {
             }
         }
         return list;
+    }
+
+    @Override
+    public int SetArticleEnable(List list,boolean enable) {
+        Session session=sessionFactory.openSession();
+        Transaction ts=session.beginTransaction();
+        Connection conn = null;
+        PreparedStatement stmt=null;
+        try {
+            String sql = "update Article set Status=" + (enable ? 0 : 1) + " WHERE id in " + ListToStr(list) + "";
+            conn = SessionFactoryUtils.getDataSource(sessionFactory).getConnection();
+            stmt = conn.prepareStatement(sql);
+            int i = stmt.executeUpdate();
+            ts.commit();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            ts.rollback();
+        }finally {
+            try {
+                stmt.close();
+                conn.close();
+                session.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return 0;
+    }
+
+    private String ListToStr(List list){
+        String sql="";
+        for(Object str:list){
+            sql=sql+","+str;
+        }
+        return "("+sql.substring(1)+")";
     }
 }
